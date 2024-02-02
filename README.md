@@ -1,6 +1,6 @@
 # COM3D2.DCMMemoryOptimization
 
-Just Copy from [VAM]MMDX (@FridaDexDump) and [KK]MMDD (@Countd360).
+Just Copied from [VAM]MMDX (@FridaDexDump) and [KK]MMDD (@Countd360).
 
 Use BepInEx.ConfigurationManager(F1) to Edit Config.
 
