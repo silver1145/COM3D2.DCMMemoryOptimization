@@ -63,7 +63,7 @@ namespace COM3D2.DCMMemoryOptimization.Plugin
 
         private void Update()
         {
-            if (gcOptimize && gcStopped && Time.time - lastExecutionTime >= 3f)
+            if (gcStopped && Time.time - lastExecutionTime >= 3f)
             {
                 if ((gcSuspendLimit > 0 && GetGarbageSize() > gcSuspendLimit) || (gcAvoidVirtualMemory && GetAvailPhyMemorySize() < 512 * 1024 * 1024))
                 {
@@ -85,15 +85,15 @@ namespace COM3D2.DCMMemoryOptimization.Plugin
                     string ms = ml.Substring(0, ml.Length - 1);
                     if (ms.Length > 0)
                     {
-                        if (m.EndsWith("m"))
+                        if (ml.EndsWith("m"))
                         {
                             return float.Parse(ms) * 1024 * 1024;
                         }
-                        else if (m.EndsWith("g"))
+                        else if (ml.EndsWith("g"))
                         {
                             return float.Parse(ms) * 1024 * 1024 * 1024;
                         }
-                        else if (m.EndsWith("%"))
+                        else if (ml.EndsWith("%"))
                         {
                             return float.Parse(ms) / 100 * (float)GetTotalPhyMemorySize();
                         }
